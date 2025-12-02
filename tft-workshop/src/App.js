@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 import React, { useState, useEffect } from 'react';
 import { Home, BookOpen, DollarSign, Grid3x3, User, Send, Check, X, Users } from 'lucide-react';
 
@@ -262,10 +258,10 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+    <nav className="bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center justify-between py-4">
-          <h1 className="text-2xl font-bold">TFT Workshop</h1>
+          <h1 className="text-2xl font-semibold text-gray-900">TFT Workshop</h1>
           <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
             {navItems.map(item => {
               const Icon = item.icon;
@@ -273,10 +269,10 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
                 <button
                   key={item.id}
                   onClick={() => setCurrentPage(item.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md transition ${
                     currentPage === item.id
-                      ? 'bg-white text-blue-600'
-                      : 'hover:bg-white hover:bg-opacity-20'
+                      ? 'bg-gray-900 text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
